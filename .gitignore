@@ -1,0 +1,24 @@
+# Runtime data
+site/data/*.sqlite
+site/data/*.sqlite-journal
+site/data/*.db
+
+# User uploads
+site/uploads/cars/*
+!site/uploads/cars/.gitkeep
+!site/uploads/cars/.htaccess
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*~
+
+# Logs
+*.log
+
+# Local env overrides
+.env
+.env.local

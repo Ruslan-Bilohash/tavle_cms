@@ -1,0 +1,86 @@
+RewriteEngine On
+RewriteBase /tavle/site/
+
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Remove trailing slash
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+# Pretty URLs for cars
+RewriteRule ^car/([0-9]+)/?$ car.php?id=$1 [L,QSA]
+RewriteRule ^car/([a-z0-9-]+)-([0-9]+)/?$ car.php?id=$2 [L,QSA]
+
+# Pretty URLs for brands & models (SEO)
+RewriteRule ^brand/([a-z0-9-]+)/([a-z0-9-]+)/?$ index.php?brand_slug=$1&model_slug=$2 [L,QSA]
+RewriteRule ^brand/([a-z0-9-]+)/?$ index.php?brand_slug=$1 [L,QSA]
+
+# Catalog sections
+RewriteRule ^plates/?$ plates.php [L,QSA]
+RewriteRule ^special/?$ special.php [L,QSA]
+RewriteRule ^add/?$ add.php [L,QSA]
+RewriteRule ^my-listings/?$ my-listings.php [L,QSA]
+
+# Pretty URLs for news
+RewriteRule ^news/([a-z0-9-]+)/?$ news.php?slug=$1 [L,QSA]
+
+# Sitemap
+RewriteRule ^sitemap\.xml$ sitemap.php [L]
+
+# Security headers
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+    Header set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains" env=HTTPS
+</IfModule>
+
+# Gzip compression
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json image/svg+xml
+</IfModule>
+
+# Cache static assets
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType text/plain "access plus 1 week"
+    ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>
+
+<IfModule mod_headers.c>
+    <FilesMatch "\.(css|js|woff2|svg|jpg|jpeg|png|webp)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+    <FilesMatch "\.(html|php)$">
+        Header set Cache-Control "no-cache"
+    </FilesMatch>
+</IfModule>
+
+# Protect sensitive files & SQLite database
+<FilesMatch "^(config\.php|db\.php|functions\.php|database\.sql)$">
+    Require all denied
+</FilesMatch>
+
+<FilesMatch "\.(sqlite|db)$">
+    Require all denied
+</FilesMatch>
+
+RedirectMatch 404 /tavle/site/data/.*
+
+# Deny access to .git
+RedirectMatch 404 /\.git
+
+# PHP settings
+<IfModule mod_php.c>
+    php_value upload_max_filesize 10M
+    php_value post_max_size 12M
+    php_value max_execution_time 60
+</IfModule>

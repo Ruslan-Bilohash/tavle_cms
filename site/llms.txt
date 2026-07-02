@@ -1,0 +1,46 @@
+# Bilen Auto CMS
+
+> PHP car listings marketplace demo for Norway, Europe and Ukraine — cars, license plates, special equipment, VIN search, public listing submission, Schema.org SEO and 4 languages.
+
+## Product
+- Name: Bilen Auto CMS (Bilen CMS)
+- Type: PHP car classifieds / auto marketplace script
+- Languages: Ukrainian, English, Russian, Norwegian
+- Developer: [Ruslan Bilohash](https://bilohash.com/resume.php), Drammen, Norway
+- Contact: [bilohash.com](https://bilohash.com/)
+
+## Key URLs
+- [Live demo — cars catalog](https://bilohash.com/tavle/site/)
+- [Product landing](https://bilohash.com/tavle/)
+- [License plates catalog](https://bilohash.com/tavle/site/plates/)
+- [Special equipment catalog](https://bilohash.com/tavle/site/special/)
+- [Add listing (no signup)](https://bilohash.com/tavle/site/add.php)
+- [My listings](https://bilohash.com/tavle/site/my-listings.php)
+- [Admin demo](https://bilohash.com/tavle/site/admin/) — login: demo / demo2026
+- [Sitemap](https://bilohash.com/tavle/site/sitemap.xml)
+- [Domain LLM context](https://bilohash.com/llms.txt)
+
+## Demo dealer
+- Global Motors — Drammen, Norway (fictional demo dealership)
+
+## SEO & structured data
+- Schema.org: WebSite, Organization, AutoDealer, SoftwareApplication, Car, Product, VehicleListing, Offer, BreadcrumbList, ItemList
+- Open Graph, Twitter Cards, hreflang (uk, en, ru, no), canonical URLs, geo tags
+
+## Commercial intent
+- Order car marketplace website development Norway
+- Auto classifieds CMS Europe
+- PHP car listings script with admin panel
+- Dealership website, license plate marketplace, special equipment listings
+
+## Tech
+- PHP 8+, SQLite, modular i18n, responsive marketplace CSS
+- Features: brand/model filters, pagination, galleries, dealer profiles, cookie consent
+- Public listing: auto-account on submit, edit via my-listings
+
+## Related products
+- [Auction CMS](https://bilohash.com/auction/)
+- [Shop CMS](https://bilohash.com/shop/)
+- [Booking CMS](https://bilohash.com/booking/)
+- [AI Platform](https://bilohash.com/ai/)
+- [mapsme.no](https://mapsme.no)

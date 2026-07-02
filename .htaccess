@@ -1,0 +1,10 @@
+RewriteEngine On
+RewriteBase /tavle/
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^site/ - [L]
+
+RewriteRule ^sitemap\.xml$ sitemap.php [L]
+RewriteRule ^solutions/?$ solutions.php [L,QSA]
+RewriteRule ^(car-dealership-no|private-seller|license-plates|special-equipment|ev-cars|import-export|leasing-fleet|norway-europe)/?$ vertical.php?slug=$1 [L,QSA]

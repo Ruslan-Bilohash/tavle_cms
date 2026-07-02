@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /install.php
+Disallow: /api/
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+Sitemap: https://bilohash.com/tavle/site/sitemap.xml
+
+# AI / LLM crawlers
+# LLM context file (not a robots directive): https://bilohash.com/tavle/site/llms.txt

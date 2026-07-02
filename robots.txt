@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://bilohash.com/tavle/sitemap.xml
