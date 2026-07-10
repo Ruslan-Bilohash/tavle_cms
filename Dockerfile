@@ -2,10 +2,9 @@
 FROM php:8.2-apache-bookworm
 
 RUN a2enmod rewrite headers \
-    && docker-php-ext-install pdo pdo_sqlite \
     && apt-get update \
-    && apt-get install -y --no-install-recommends libzip-dev unzip \
-    && docker-php-ext-install zip \
+    && apt-get install -y --no-install-recommends libsqlite3-dev libzip-dev unzip \
+    && docker-php-ext-install pdo pdo_sqlite zip \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /var/www/html
