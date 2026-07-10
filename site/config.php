@@ -6,7 +6,7 @@
 declare(strict_types=1);
 
 define('BILEN_ROOT', __DIR__);
-define('BILEN_VERSION', '1.1.0');
+define('BILEN_VERSION', '1.1.1');
 
 // Environment: production | development
 define('APP_ENV', 'production');

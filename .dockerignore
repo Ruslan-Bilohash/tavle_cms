@@ -1,0 +1,16 @@
+.git
+.gitignore
+site/data/*.sqlite
+site/data/*.sqlite-journal
+site/data/*.db
+site/uploads/cars/*
+!site/uploads/cars/.gitkeep
+!site/uploads/cars/.htaccess
+**/.env
+**/.env.local
+dist
+*.zip
+.DS_Store
+Thumbs.db
+.idea
+.vscode

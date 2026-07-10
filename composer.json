@@ -1,0 +1,36 @@
+{
+    "name": "bilohash/tavle-cms",
+    "description": "BILOHASH Tavle / Bilen CMS — cars, license plates, special equipment, multilingual SEO",
+    "type": "project",
+    "license": "proprietary",
+    "keywords": ["tavle", "bilen", "cars", "cms", "php", "sqlite", "bilohash"],
+    "homepage": "https://bilohash.com/tavle/",
+    "support": {
+        "email": "info@bilohash.com",
+        "issues": "https://github.com/Ruslan-Bilohash/tavle_cms/issues",
+        "source": "https://github.com/Ruslan-Bilohash/tavle_cms"
+    },
+    "authors": [
+        {
+            "name": "BILOHASH",
+            "email": "info@bilohash.com",
+            "homepage": "https://bilohash.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.2",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "ext-pdo": "*",
+        "ext-pdo_sqlite": "*"
+    },
+    "suggest": {
+        "ext-zip": "Demo package download"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://composer.pkg.github.com/Ruslan-Bilohash/"
+        }
+    ]
+}
